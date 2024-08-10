@@ -6,17 +6,22 @@ const UserDashboard = async () => {
   const user = await getUser();
 
   return (
-    <div>
-      <h1>user</h1>
-      <Image
-        src={user?.picture || '/placeholder.jpg'}
-        height={300}
-        width={400}
-        alt="profile picture"
-      />
-      <h2>
-        {user?.given_name} {user?.family_name}
-      </h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-6 rounded-lg shadow-lg">
+        <div className="flex flex-col items-center">
+          <Image
+            className="rounded-full"
+            src={user?.picture || '/placeholder.jpg'}
+            height={100}
+            width={100}
+            alt="Profile Picture"
+          />
+          <h1 className="mt-4 text-xl font-semibold text-gray-900">
+            {user?.given_name} {user?.family_name}
+          </h1>
+          <p className="mt-2 text-gray-600">{user?.email}</p>
+        </div>
+      </div>
     </div>
   );
 };
