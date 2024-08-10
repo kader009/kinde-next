@@ -15,7 +15,7 @@ const UserDashboard = async () => {
             className="rounded-full"
             src={user?.picture || '/placeholder.jpg'}
             height={100}
-            width={90}
+            width={100}
             alt="Profile Picture"
           />
           <h1 className="mt-4 text-xl font-semibold text-gray-900">
